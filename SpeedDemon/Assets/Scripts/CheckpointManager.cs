@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CheckpointManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CheckpointManager : MonoBehaviour
 
     bool [] alreadyAdded = new bool[3];
 
+    public Text tracker;
 
 
     // Start is called before the first frame update
@@ -50,8 +52,9 @@ public class CheckpointManager : MonoBehaviour
             {
                 alreadyAdded[i] = true;
                 checkPoints_completed++;
-
             }
         }
+
+        tracker.text = checkPoints_completed.ToString() + "/3";
     }
 }
